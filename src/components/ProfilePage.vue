@@ -4,29 +4,29 @@
     <div class="status-bar">
       <div class="time">9:41</div>
       <div class="status-icons">
-        <img src="/assets/Rightside.svg" alt="状态图标" class="status-right" />
+        <img :src="$getAssetUrl('/assets/Rightside.svg')" alt="状态图标" class="status-right" />
       </div>
     </div>
 
     <!-- 顶部背景和头像区域 -->
     <div class="profile-header">
-      <img src="/assets/profile-bg.png" alt="背景" class="background-image" />
+      <img :src="$getAssetUrl('/assets/profile-bg.png')" alt="背景" class="background-image" />
       <div class="header-controls">
         <img
-          src="/assets/settings-icon.svg"
+          :src="$getAssetUrl('/assets/settings-icon.svg')"
           alt="设置"
           class="control-icon"
           @click="openSettings"
         />
         <img
-          src="/assets/search-icon.svg"
+          :src="$getAssetUrl('/assets/search-icon.svg')"
           alt="搜索"
           class="control-icon"
           @click="openSearch"
         />
       </div>
       <img
-        src="/assets/profile-avatar.svg"
+        :src="$getAssetUrl('/assets/profile-avatar.svg')"
         alt="用户头像"
         class="profile-avatar"
         @click="editProfile"
@@ -38,21 +38,21 @@
       <div class="stat-card" @click="viewSales">
         <div class="stat-label">出售</div>
         <div class="stat-content">
-          <img src="/assets/sell-icon.svg" alt="出售" class="stat-icon" />
+          <img :src="$getAssetUrl('/assets/sell-icon.svg')" alt="出售" class="stat-icon" />
           <div class="stat-number">175</div>
         </div>
       </div>
       <div class="stat-card" @click="viewPublished">
         <div class="stat-label">发布</div>
         <div class="stat-content">
-          <img src="/assets/publish-icon.svg" alt="发布" class="stat-icon" />
+          <img :src="$getAssetUrl('/assets/publish-icon.svg')" alt="发布" class="stat-icon" />
           <div class="stat-number">312</div>
         </div>
       </div>
       <div class="stat-card" @click="viewFavorites">
         <div class="stat-label">收藏</div>
         <div class="stat-content">
-          <img src="/assets/favorite-icon.svg" alt="收藏" class="stat-icon" />
+          <img :src="$getAssetUrl('/assets/favorite-icon.svg')" alt="收藏" class="stat-icon" />
           <div class="stat-number">806</div>
         </div>
       </div>
@@ -61,27 +61,27 @@
     <!-- 功能菜单区域 -->
     <div class="menu-section">
       <div class="menu-item" @click="viewOrders">
-        <img src="/assets/order-icon.svg" alt="订单" class="menu-icon" />
+        <img :src="$getAssetUrl('/assets/order-icon.svg')" alt="订单" class="menu-icon" />
         <div class="menu-text">我的订单</div>
       </div>
       <div class="menu-item" @click="viewComments">
-        <img src="/assets/comment-icon.svg" alt="评论" class="menu-icon" />
+        <img :src="$getAssetUrl('/assets/comment-icon.svg')" alt="评论" class="menu-icon" />
         <div class="menu-text">我的评论</div>
       </div>
       <div class="menu-item" @click="viewDrafts">
-        <img src="/assets/draft-icon.svg" alt="草稿" class="menu-icon" />
+        <img :src="$getAssetUrl('/assets/draft-icon.svg')" alt="草稿" class="menu-icon" />
         <div class="menu-text">我的草稿</div>
       </div>
       <div class="menu-item" @click="viewDataGuide">
-        <img src="/assets/data-icon.svg" alt="数据" class="menu-icon" />
+        <img :src="$getAssetUrl('/assets/data-icon.svg')" alt="数据" class="menu-icon" />
         <div class="menu-text">数据指南</div>
       </div>
       <div class="menu-item" @click="viewHelp">
-        <img src="/assets/help-icon.svg" alt="帮助" class="menu-icon" />
+        <img :src="$getAssetUrl('/assets/help-icon.svg')" alt="帮助" class="menu-icon" />
         <div class="menu-text">帮助中心</div>
       </div>
       <div class="menu-item" @click="giveFeedback">
-        <img src="/assets/feedback-icon.svg" alt="反馈" class="menu-icon" />
+        <img :src="$getAssetUrl('/assets/feedback-icon.svg')" alt="反馈" class="menu-icon" />
         <div class="menu-text">我要反馈</div>
       </div>
     </div>

@@ -56,7 +56,7 @@
       <!-- 中间特殊按钮 -->
       <div class="tab-center">
         <img
-          src="/assets/Tabbaritem2.svg"
+          :src="$getAssetUrl('/assets/Tabbaritem2.svg')"
           alt="中心按钮"
           class="center-button"
         />

@@ -5,7 +5,7 @@
       <div class="left-side">
         <div class="time">9:41</div>
       </div>
-      <img class="right-side" src="/assets/battery-status.svg" alt="信号状态" />
+      <img class="right-side" :src="$getAssetUrl('/assets/battery-status.svg')" alt="信号状态" />
     </div>
 
     <!-- 顶部导航 -->
@@ -25,7 +25,7 @@
           ></div>
         </div>
       </div>
-      <img class="search-icon" src="/assets/search-icon.svg" alt="搜索" />
+      <img class="search-icon" :src="$getAssetUrl('/assets/search-icon.svg')" alt="搜索" />
     </div>
 
     <!-- 分类选择区域 -->
@@ -147,20 +147,20 @@
     <div class="tab-bar">
       <div class="tab-container">
         <div class="tab-bar-item" @click="switchTab('推荐')">
-          <img class="tab-icon" src="/assets/home-icon.svg" alt="首页" />
+          <img class="tab-icon" :src="$getAssetUrl('/assets/home-icon.svg')" alt="首页" />
           <div class="tab-label">首页</div>
         </div>
         <div class="tab-bar-item" @click="switchTab('唱片')">
-          <img class="tab-icon" src="/assets/disc-icon.svg" alt="淘碟" />
+          <img class="tab-icon" :src="$getAssetUrl('/assets/disc-icon.svg')" alt="淘碟" />
           <div class="tab-label">淘碟</div>
         </div>
-        <img class="center-tab" src="/assets/center-tab.svg" alt="中心按钮" />
+        <img class="center-tab" :src="$getAssetUrl('/assets/center-tab.svg')" alt="中心按钮" />
         <div class="tab-bar-item" @click="switchTab('动态')">
-          <img class="tab-icon" src="/assets/activity-icon.svg" alt="动态" />
+          <img class="tab-icon" :src="$getAssetUrl('/assets/activity-icon.svg')" alt="动态" />
           <div class="tab-label">动态</div>
         </div>
         <div class="tab-bar-item" @click="switchTab('我的')">
-          <img class="tab-icon" src="/assets/profile-icon.svg" alt="我的" />
+          <img class="tab-icon" :src="$getAssetUrl('/assets/profile-icon.svg')" alt="我的" />
           <div class="tab-label">我的</div>
         </div>
       </div>

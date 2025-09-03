@@ -5,7 +5,7 @@
       <div class="left-side">
         <div class="time">9:41</div>
       </div>
-      <img class="right-side" src="/assets/battery-status.svg" alt="信号状态" />
+      <img class="right-side" :src="$getAssetUrl('/assets/battery-status.svg')" alt="信号状态" />
     </div>
 
     <!-- 顶部标题栏 -->
@@ -13,14 +13,14 @@
       <div class="title-section">
         <div class="title-text">淘碟</div>
       </div>
-      <img class="search-icon" src="/assets/search-icon.svg" alt="搜索" />
+      <img class="search-icon" :src="$getAssetUrl('/assets/search-icon.svg')" alt="搜索" />
     </div>
 
     <!-- Banner区域 -->
     <div class="banner-section">
       <img
         class="banner-image"
-        src="/assets/vinyl-banner.png"
+        :src="$getAssetUrl('/assets/vinyl-banner.png')"
         alt="淘碟横幅"
         @click="clickBanner"
       />
@@ -34,7 +34,7 @@
         <div class="filter-text">价格</div>
       </div>
       <div class="filter-button" @click="showFilter">
-        <img class="filter-icon" src="/assets/filter-icon.svg" alt="筛选" />
+        <img class="filter-icon" :src="$getAssetUrl('/assets/filter-icon.svg')" alt="筛选" />
         <div class="filter-label">筛选</div>
       </div>
     </div>

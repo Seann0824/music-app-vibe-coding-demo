@@ -7,7 +7,7 @@ export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/music-app-vibe-coding-demo/" : "/",
   build: {
     outDir: "dist",
-    assetsDir: process.env.NODE_ENV === "production" ? "/music-app-vibe-coding-demo/" : "/" + "assets",
+    assetsDir: "assets",
     // 确保静态资源正确引用
     rollupOptions: {
       output: {
@@ -20,5 +20,11 @@ export default defineConfig({
   server: {
     port: 3001,
     open: true,
+  },
+  // 确保 public 目录下的静态资源能正确访问
+  publicDir: "public",
+  define: {
+    // 定义全局变量，让组件可以访问正确的 base URL
+    __BASE_URL__: JSON.stringify(process.env.NODE_ENV === "production" ? "/music-app-vibe-coding-demo/" : "/"),
   },
 });

@@ -5,7 +5,7 @@
       <div class="left-side">
         <div class="time">9:41</div>
       </div>
-      <img class="right-side" src="/assets/battery-status.svg" alt="信号状态" />
+      <img class="right-side" :src="$getAssetUrl('/assets/battery-status.svg')" alt="信号状态" />
     </div>
 
     <!-- 顶部导航 -->
@@ -25,12 +25,12 @@
           ></div>
         </div>
       </div>
-      <img class="search-icon" src="/assets/search-icon.svg" alt="搜索" />
+      <img class="search-icon" :src="$getAssetUrl('/assets/search-icon.svg')" alt="搜索" />
     </div>
 
     <!-- 推荐Banner -->
     <div class="banner-section">
-      <img class="banner-image" src="/assets/banner.png" alt="推荐Banner" />
+      <img class="banner-image" :src="$getAssetUrl('/assets/banner.png')" alt="推荐Banner" />
     </div>
 
     <!-- 歌单推荐标题 -->
@@ -46,11 +46,11 @@
     <!-- 推荐歌单 -->
     <div class="featured-playlist">
       <div class="playlist-background">
-        <img class="bg-image" src="/assets/featured-bg.png" alt="背景" />
+        <img class="bg-image" :src="$getAssetUrl('/assets/featured-bg.png')" alt="背景" />
         <div class="blur-overlay"></div>
         <img
           class="album-cover"
-          src="/assets/featured-album.png"
+          :src="$getAssetUrl('/assets/featured-album.png')"
           alt="专辑封面"
         />
       </div>
@@ -62,7 +62,7 @@
           我通过镜子向一颗心脏展示一些妙不可言的磨镜视频，心脏吃不消这么香艳刺激的场面，坏掉了。
         </div>
         <div class="play-button" @click="playPlaylist">
-          <img class="music-note" src="/assets/music-note.svg" alt="播放" />
+          <img class="music-note" :src="$getAssetUrl('/assets/music-note.svg')" alt="播放" />
           <div class="play-count">642</div>
         </div>
       </div>
@@ -80,7 +80,7 @@
         >
           <img
             class="album-image"
-            :src="`/assets/album-${index + 1}.png`"
+            :src="$getAssetUrl(`/assets/album-${index + 1}.png`)"
             :alt="album.title"
           />
           <div class="album-title">{{ album.title }}</div>
@@ -96,7 +96,7 @@
         >
           <img
             class="album-image"
-            :src="`/assets/album-${index + 4}.png`"
+            :src="$getAssetUrl(`/assets/album-${index + 4}.png`)"
             :alt="album.title"
           />
           <div class="album-title">{{ album.title }}</div>
@@ -112,7 +112,7 @@
         >
           <img
             class="album-image"
-            :src="`/assets/album-${index + 7}.png`"
+            :src="$getAssetUrl(`/assets/album-${index + 7}.png`)"
             :alt="album.title"
           />
           <div class="album-title">{{ album.title }}</div>

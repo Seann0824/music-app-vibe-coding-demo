@@ -5,7 +5,7 @@
       <div class="left-side">
         <div class="time">9:41</div>
       </div>
-      <img class="right-side" src="/assets/battery-status.svg" alt="信号状态" />
+      <img class="right-side" :src="$getAssetUrl('/assets/battery-status.svg')" alt="信号状态" />
     </div>
 
     <!-- 顶部导航 -->
@@ -25,7 +25,7 @@
           ></div>
         </div>
       </div>
-      <img class="search-icon" src="/assets/search-icon.svg" alt="搜索" />
+      <img class="search-icon" :src="$getAssetUrl('/assets/search-icon.svg')" alt="搜索" />
     </div>
 
     <!-- 动态内容 -->
