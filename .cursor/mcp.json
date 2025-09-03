@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mastergo-mcp-for-vscode": {
+      "url": "http://localhost:3000/mcp/sse",
+      "env": {}
+    }
+  }
+}
