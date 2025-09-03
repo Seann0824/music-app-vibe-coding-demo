@@ -123,20 +123,20 @@
     <!-- 底部Tab Bar -->
     <div class="tab-bar">
       <div class="tab-container">
-        <div class="tab-bar-item active">
+        <div class="tab-bar-item active" @click="switchTab('推荐')">
           <img class="tab-icon" src="/assets/home-icon.svg" alt="首页" />
           <div class="tab-label">首页</div>
         </div>
-        <div class="tab-bar-item">
+        <div class="tab-bar-item" @click="switchTab('唱片')">
           <img class="tab-icon" src="/assets/disc-icon.svg" alt="淘碟" />
           <div class="tab-label">淘碟</div>
         </div>
         <img class="center-tab" src="/assets/center-tab.svg" alt="中心按钮" />
-        <div class="tab-bar-item">
+        <div class="tab-bar-item" @click="switchTab('动态')">
           <img class="tab-icon" src="/assets/activity-icon.svg" alt="动态" />
           <div class="tab-label">动态</div>
         </div>
-        <div class="tab-bar-item">
+        <div class="tab-bar-item" @click="switchTab('我的')">
           <img class="tab-icon" src="/assets/profile-icon.svg" alt="我的" />
           <div class="tab-label">我的</div>
         </div>
@@ -173,9 +173,19 @@ const albums = ref([
   { title: "你小时候做过什么可以吹嘘一辈子的事情？" },
 ]);
 
+// 定义 emit 事件
+const emit = defineEmits<{
+  switchPage: [page: string];
+}>();
+
 // 切换标签页
 const switchTab = (tab: string) => {
+  console.log("HomePage - 切换标签页到:", tab);
   activeTab.value = tab;
+  if (tab !== "推荐") {
+    console.log("HomePage - 发送switchPage事件:", tab);
+    emit("switchPage", tab);
+  }
 };
 
 // 播放歌单
@@ -210,12 +220,14 @@ const clickAlbum = (index: number) => {
 
 .home-page {
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: var(--token-color-6);
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   max-width: 375px;
   margin: 0 auto;
+  padding-bottom: 78px; /* 为底部Tab Bar留出空间 */
 }
 
 /* 状态栏 */
@@ -585,6 +597,12 @@ const clickAlbum = (index: number) => {
   padding: 2px 24px;
   width: 72.6px;
   height: 46px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-bar-item:hover {
+  transform: translateY(-2px);
 }
 
 .tab-bar-item.active .tab-label {
