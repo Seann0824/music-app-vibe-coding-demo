@@ -15,11 +15,15 @@
       v-else-if="currentPage === '动态'"
       @switch-page="switchPage"
     />
+    <ProfilePage v-else-if="currentPage === '我的'" @switch-page="switchPage" />
     <div v-else class="coming-soon">
       <h2>{{ currentPage }}页面</h2>
       <p>即将上线...</p>
       <button @click="switchPage('推荐')" class="back-button">返回首页</button>
     </div>
+
+    <!-- 全局共享的底部导航栏 -->
+    <TabBar :active-tab="currentPage" @switch-tab="switchPage" />
   </div>
 </template>
 
@@ -31,6 +35,8 @@ import ArtistPage from "./components/ArtistPage.vue";
 import LabelPage from "./components/LabelPage.vue";
 import RankingPage from "./components/RankingPage.vue";
 import ActivityPage from "./components/ActivityPage.vue";
+import ProfilePage from "./components/ProfilePage.vue";
+import TabBar from "./components/TabBar.vue";
 
 // 当前页面
 const currentPage = ref("推荐");

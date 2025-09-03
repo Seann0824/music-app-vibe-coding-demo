@@ -79,32 +79,6 @@
         </div>
       </div>
     </div>
-
-    <!-- 底部Tab Bar -->
-    <div class="tab-bar">
-      <div class="tab-container">
-        <div class="tab-bar-item" @click="switchTab('推荐')">
-          <img class="tab-icon" src="/assets/home-icon.svg" alt="首页" />
-          <div class="tab-label">首页</div>
-        </div>
-        <div class="tab-bar-item active" @click="switchTab('唱片')">
-          <img class="tab-icon" src="/assets/disc-icon.svg" alt="淘碟" />
-          <div class="tab-label">淘碟</div>
-        </div>
-        <img class="center-tab" src="/assets/center-tab.svg" alt="中心按钮" />
-        <div class="tab-bar-item" @click="switchTab('动态')">
-          <img class="tab-icon" src="/assets/activity-icon.svg" alt="动态" />
-          <div class="tab-label">动态</div>
-        </div>
-        <div class="tab-bar-item" @click="switchTab('我的')">
-          <img class="tab-icon" src="/assets/profile-icon.svg" alt="我的" />
-          <div class="tab-label">我的</div>
-        </div>
-      </div>
-      <div class="home-indicator">
-        <div class="indicator-bar"></div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -579,95 +553,9 @@ const playVinyl = (vinyl: any) => {
   font-weight: bold;
 }
 
-/* 底部Tab Bar */
-.tab-bar {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  max-width: 375px;
-  margin: 0 auto;
-  height: 78px;
-}
-
-.tab-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 5px 0 0;
-  background-color: var(--token-color-6);
-  height: 51px;
-}
-
-.tab-bar-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 4px;
-  padding: 2px 24px;
-  width: 72.6px;
-  height: 46px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tab-bar-item:hover {
-  transform: translateY(-2px);
-}
-
-.tab-bar-item.active .tab-label {
-  color: var(--token-color-7);
-}
-
-.tab-bar-item .tab-label {
-  color: var(--token-color-2);
-  white-space: nowrap;
-  font-family: "SFProText-Medium", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 10px;
-  line-height: 14px;
-  text-align: center;
-  width: 20px;
-  height: 14px;
-}
-
-.tab-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.center-tab {
-  flex-grow: 1;
-  width: 84.6px;
-  height: 38px;
-}
-
-.home-indicator {
-  position: relative;
-  background-color: var(--token-color-4);
-  height: 27px;
-}
-
-.indicator-bar {
-  border-radius: 100px;
-  background-color: var(--label-color-dark-primary);
-  position: absolute;
-  left: 120.5px;
-  bottom: 8px;
-  width: 134px;
-  height: 5px;
-}
-
 /* 响应式设计 */
 @media (min-width: 376px) {
   .vinyl-page {
-    max-width: 100%;
-  }
-
-  .tab-bar {
     max-width: 100%;
   }
 
