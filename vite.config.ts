@@ -7,7 +7,7 @@ export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/music-app-vibe-coding-demo/" : "/",
   build: {
     outDir: "dist",
-    assetsDir: "assets",
+    assetsDir: process.env.NODE_ENV === "production" ? "/music-app-vibe-coding-demo/" : "/" + "assets",
     // 确保静态资源正确引用
     rollupOptions: {
       output: {
