@@ -188,37 +188,43 @@ const emit = defineEmits<{
   switchPage: [page: string];
 }>();
 
+// 获取资源路径的辅助函数
+const getAssetUrl = (path: string) => {
+  const cleanPath = path.replace(/^\/+/, '');
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 // 作曲家数据
 const composers = ref([
   {
     chineseName: "徐建",
     englishName: "Faithe Tuttle",
-    avatar: "/assets/artist-1.svg",
+    avatar: getAssetUrl("/assets/artist-1.svg"),
   },
   {
     chineseName: "陈梓鑫",
     englishName: "Bruno Harriman",
-    avatar: "/assets/artist-2.svg",
+    avatar: getAssetUrl("/assets/artist-2.svg"),
   },
   {
     chineseName: "李瑶",
     englishName: "Freda Betty",
-    avatar: "/assets/artist-3.svg",
+    avatar: getAssetUrl("/assets/artist-3.svg"),
   },
   {
     chineseName: "刘怡鑫",
     englishName: "Lance Bloomfield",
-    avatar: "/assets/artist-4.svg",
+    avatar: getAssetUrl("/assets/artist-4.svg"),
   },
   {
     chineseName: "黄晓宣",
     englishName: "Matt Arthur",
-    avatar: "/assets/artist-5.svg",
+    avatar: getAssetUrl("/assets/artist-5.svg"),
   },
   {
     chineseName: "廖冬",
     englishName: "Glenn Bartholomew",
-    avatar: "/assets/artist-6.svg",
+    avatar: getAssetUrl("/assets/artist-6.svg"),
   },
 ]);
 
@@ -227,32 +233,32 @@ const conductors = ref([
   {
     chineseName: "张江平",
     englishName: "Gill Bill",
-    avatar: "/assets/conductor-1.svg",
+    avatar: getAssetUrl("/assets/conductor-1.svg"),
   },
   {
     chineseName: "王熙",
     englishName: "Bell Floyd",
-    avatar: "/assets/conductor-2.svg",
+    avatar: getAssetUrl("/assets/conductor-2.svg"),
   },
   {
     chineseName: "李成逸",
     englishName: "Richards Aubrey",
-    avatar: "/assets/conductor-3.svg",
+    avatar: getAssetUrl("/assets/conductor-3.svg"),
   },
   {
     chineseName: "阎怡星",
     englishName: "Mike Ricardo",
-    avatar: "/assets/conductor-4.svg",
+    avatar: getAssetUrl("/assets/conductor-4.svg"),
   },
   {
     chineseName: "周泽龙",
     englishName: "Rachel Sheridan",
-    avatar: "/assets/conductor-5.svg",
+    avatar: getAssetUrl("/assets/conductor-5.svg"),
   },
   {
     chineseName: "于洪华",
     englishName: "Eli Thackeray",
-    avatar: "/assets/conductor-6.svg",
+    avatar: getAssetUrl("/assets/conductor-6.svg"),
   },
 ]);
 
@@ -261,32 +267,32 @@ const pianists = ref([
   {
     chineseName: "吕星",
     englishName: "Hawkins Ted",
-    avatar: "/assets/pianist-1.svg",
+    avatar: getAssetUrl("/assets/pianist-1.svg"),
   },
   {
     chineseName: "吴立",
     englishName: "Gordon Jimmy",
-    avatar: "/assets/pianist-2.svg",
+    avatar: getAssetUrl("/assets/pianist-2.svg"),
   },
   {
     chineseName: "李德夏",
     englishName: "Xavier Burne-Jones",
-    avatar: "/assets/pianist-3.svg",
+    avatar: getAssetUrl("/assets/pianist-3.svg"),
   },
   {
     chineseName: "苏迪",
     englishName: "Watson Greg",
-    avatar: "/assets/pianist-4.svg",
+    avatar: getAssetUrl("/assets/pianist-4.svg"),
   },
   {
     chineseName: "陈梓鑫",
     englishName: "Bruno Harriman",
-    avatar: "/assets/pianist-5.svg",
+    avatar: getAssetUrl("/assets/pianist-5.svg"),
   },
   {
     chineseName: "张德敏",
     englishName: "Octavia Bennett",
-    avatar: "/assets/pianist-6.svg",
+    avatar: getAssetUrl("/assets/pianist-6.svg"),
   },
 ]);
 

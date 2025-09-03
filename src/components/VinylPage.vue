@@ -93,12 +93,18 @@ const emit = defineEmits<{
   switchPage: [page: string];
 }>();
 
+// 获取资源路径的辅助函数
+const getAssetUrl = (path: string) => {
+  const cleanPath = path.replace(/^\/+/, '');
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 // 唱片数据
 const vinyls = ref([
   {
     id: 1,
-    cover: "/assets/vinyl-1.png",
-    playIcon: "/assets/play-btn-1.svg",
+    cover: getAssetUrl("/assets/vinyl-1.png"),
+    playIcon: getAssetUrl("/assets/play-btn-1.svg"),
     description:
       "还真别说，我幻想过，假如我脑子里有个大容量硬盘，我把维基百科或者百度百科的镜像缓存到脑子里，一定帅呆了。",
     artist: "李冬",
@@ -107,8 +113,8 @@ const vinyls = ref([
   },
   {
     id: 2,
-    cover: "/assets/vinyl-2.png",
-    playIcon: "/assets/play-btn-2.svg",
+    cover: getAssetUrl("/assets/vinyl-2.png"),
+    playIcon: getAssetUrl("/assets/play-btn-2.svg"),
     description:
       "我倒不是说他是个坏人——他不是坏人。可是不一定是坏人才能让人心烦——你可以是个好人，却同时让人心烦。",
     artist: "李子强",
@@ -117,8 +123,8 @@ const vinyls = ref([
   },
   {
     id: 3,
-    cover: "/assets/vinyl-3.png",
-    playIcon: "/assets/play-btn-3.svg",
+    cover: getAssetUrl("/assets/vinyl-3.png"),
+    playIcon: getAssetUrl("/assets/play-btn-3.svg"),
     description:
       "那我的也就差不多，老子只要往那儿一站，王霸之气辐射方圆数百里。",
     artist: "苏迪",
@@ -127,8 +133,8 @@ const vinyls = ref([
   },
   {
     id: 4,
-    cover: "/assets/vinyl-4.png",
-    playIcon: "/assets/play-btn-4.svg",
+    cover: getAssetUrl("/assets/vinyl-4.png"),
+    playIcon: getAssetUrl("/assets/play-btn-4.svg"),
     description: "不过，我却摇了摇头，居然还在乎白不白的问题？",
     artist: "黎楠",
     album: "樱桃肉肉丸",
@@ -136,8 +142,8 @@ const vinyls = ref([
   },
   {
     id: 5,
-    cover: "/assets/vinyl-5.png",
-    playIcon: "/assets/play-btn-5.svg",
+    cover: getAssetUrl("/assets/vinyl-5.png"),
+    playIcon: getAssetUrl("/assets/play-btn-5.svg"),
     description: "闻言，我当即清楚，这是小黑的声音。",
     artist: "郭文",
     album: "二号葫芦娃",

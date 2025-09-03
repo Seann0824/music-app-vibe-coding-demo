@@ -110,58 +110,58 @@ const tabs = ref(["推荐", "唱片", "艺术家", "唱片公司", "榜单"]);
 
 // 分类数据
 const categories = ref([
-  { name: "LP黑胶", image: "/assets/category-lp.png" },
-  { name: "CD", image: "/assets/category-cd.png" },
-  { name: "SACD", image: "/assets/category-sacd.png" },
-  { name: "XXXX", image: "/assets/category-xxxx1.png" },
-  { name: "XXXX", image: "/assets/category-xxxx2.png" },
+  { name: "LP黑胶", image: getAssetUrl("/assets/category-lp.png") },
+  { name: "CD", image: getAssetUrl("/assets/category-cd.png") },
+  { name: "SACD", image: getAssetUrl("/assets/category-sacd.png") },
+  { name: "XXXX", image: getAssetUrl("/assets/category-xxxx1.png") },
+  { name: "XXXX", image: getAssetUrl("/assets/category-xxxx2.png") },
 ]);
 
 // 唱片列表数据
 const discList = ref([
   {
-    cover: "/assets/disc-1.png",
-    playIcon: "/assets/play-icon-1.svg",
+    cover: getAssetUrl("/assets/disc-1.png"),
+    playIcon: getAssetUrl("/assets/play-icon-1.svg"),
     title:
       "还真别说，我幻想过，假如我脑子里有个大容量硬盘，我把维基百科或者百度百科的镜像缓存到脑子里，一定帅呆了。",
     description:
       "你出生的时候，你哭着，周围的人笑着；你逝去的时候，你笑着，而周围的人在哭！",
   },
   {
-    cover: "/assets/disc-2.png",
-    playIcon: "/assets/play-icon-2.svg",
+    cover: getAssetUrl("/assets/disc-2.png"),
+    playIcon: getAssetUrl("/assets/play-icon-2.svg"),
     title:
       "一个不成熟男子的标志是他愿意为某种事业英勇地死去，一个成熟男子的标志是他愿意为某种事业卑贱地活着。",
     description:
       '哈利波特里的"阿尼玛格斯"—会自己变形的巫师。整个魔法世界唯一能变成虎鲸的男人。',
   },
   {
-    cover: "/assets/disc-3.png",
-    playIcon: "/assets/play-icon-3.svg",
+    cover: getAssetUrl("/assets/disc-3.png"),
+    playIcon: getAssetUrl("/assets/play-icon-3.svg"),
     title:
       "我通过镜子向一颗心脏展示一些妙不可言的磨镜视频，心脏吃不消这么香艳刺激的场面，坏掉了。",
     description:
       "我遇见过很多当年很红但是后来不红的人，再遇见她们的时候，能明显在她们身上看到时代的痕迹。",
   },
   {
-    cover: "/assets/disc-4.png",
-    playIcon: "/assets/play-icon-4.svg",
+    cover: getAssetUrl("/assets/disc-4.png"),
+    playIcon: getAssetUrl("/assets/play-icon-4.svg"),
     title:
       "你不管做什么事，如果做得太好了，一不警惕，就会在无意中卖弄起来。那样的话，你就不再那么好了。",
     description:
       "我遇见过很多当年很红但是后来不红的人，再遇见她们的时候，能明显在她们身上看到时代的痕迹。",
   },
   {
-    cover: "/assets/disc-5.png",
-    playIcon: "/assets/play-icon-5.svg",
+    cover: getAssetUrl("/assets/disc-5.png"),
+    playIcon: getAssetUrl("/assets/play-icon-5.svg"),
     title:
       "我也和你一样，一样的帽子，一样的衣服，一样的动作。可是哈克，你可以和我一样吗？在麦田自由的奔跑……",
     description:
       "我的骄傲被爹妈看出来了，我没在收假最后一天才写完作业，我知道，这是我的我骄傲，也是其他小朋友的恨。",
   },
   {
-    cover: "/assets/disc-6.png",
-    playIcon: "/assets/play-icon-6.svg",
+    cover: getAssetUrl("/assets/disc-6.png"),
+    playIcon: getAssetUrl("/assets/play-icon-6.svg"),
     title: "你千万别跟任何人谈任何事情。你只要一谈起，就会想念起每一个人来。",
     description: "不过，我却摇了摇头，居然还在乎白不白的问题？",
   },
@@ -171,6 +171,12 @@ const discList = ref([
 const emit = defineEmits<{
   switchPage: [page: string];
 }>();
+
+// 获取资源路径的辅助函数
+const getAssetUrl = (path: string) => {
+  const cleanPath = path.replace(/^\/+/, '');
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
 
 // 切换标签页
 const switchTab = (tab: string) => {

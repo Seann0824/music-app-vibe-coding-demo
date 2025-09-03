@@ -141,23 +141,29 @@ const emit = defineEmits<{
   switchPage: [page: string];
 }>();
 
+// 获取资源路径的辅助函数
+const getAssetUrl = (path: string) => {
+  const cleanPath = path.replace(/^\/+/, '');
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 // 动态数据
 const activities = ref([
   {
     id: 1,
     username: "动感光波",
-    avatar: "/assets/activity-avatar-1.svg",
+    avatar: getAssetUrl("/assets/activity-avatar-1.svg"),
     publishTime: "12-01 23:51",
     content: "哪怕是野火焚烧，哪怕是冰雪覆盖，依然是志向不改，依然是信念不衰。",
-    videoCover: "/assets/activity-video-1.png",
-    playIcon: "/assets/activity-play-1.svg",
+    videoCover: getAssetUrl("/assets/activity-video-1.png"),
+    playIcon: getAssetUrl("/assets/activity-play-1.svg"),
     videoDuration: "22:50",
-    likeIcon: "/assets/activity-like-1.svg",
-    collectIcon: "/assets/collect-icon.svg",
+    likeIcon: getAssetUrl("/assets/activity-like-1.svg"),
+    collectIcon: getAssetUrl("/assets/collect-icon.svg"),
     collectCount: "167",
-    commentIcon: "/assets/comment-icon.svg",
+    commentIcon: getAssetUrl("/assets/comment-icon.svg"),
     commentCount: "200",
-    shareIcon: "/assets/share-icon.svg",
+    shareIcon: getAssetUrl("/assets/share-icon.svg"),
     comments: [
       {
         username: "宇宙预报员",
@@ -173,19 +179,19 @@ const activities = ref([
   {
     id: 2,
     username: "樱桃肉肉丸",
-    avatar: "/assets/activity-avatar-2.svg",
+    avatar: getAssetUrl("/assets/activity-avatar-2.svg"),
     publishTime: "11-29 01:38",
     content:
       "我没回答他，我只是起身走到窗口往外眺望，一霎时，我觉得寂寞极了，我简直希望自己已经死了。",
-    videoCover: "/assets/activity-video-2.png",
-    playIcon: "/assets/activity-play-2.svg",
+    videoCover: getAssetUrl("/assets/activity-video-2.png"),
+    playIcon: getAssetUrl("/assets/activity-play-2.svg"),
     videoDuration: "12:03",
-    likeIcon: "/assets/activity-like-2.svg",
-    collectIcon: "/assets/collect-icon-2.svg",
+    likeIcon: getAssetUrl("/assets/activity-like-2.svg"),
+    collectIcon: getAssetUrl("/assets/collect-icon-2.svg"),
     collectCount: "259",
-    commentIcon: "/assets/comment-icon-2.svg",
+    commentIcon: getAssetUrl("/assets/comment-icon-2.svg"),
     commentCount: "358",
-    shareIcon: "/assets/share-icon-2.svg",
+    shareIcon: getAssetUrl("/assets/share-icon-2.svg"),
     comments: [
       {
         username: "超级凶鸭",
@@ -202,19 +208,19 @@ const activities = ref([
   {
     id: 3,
     username: "全世界爱自己第一名",
-    avatar: "/assets/activity-avatar-3.svg",
+    avatar: getAssetUrl("/assets/activity-avatar-3.svg"),
     publishTime: "12-04 23:29",
     content:
       "我是说不到你开始做的时候，你怎么知道自己打算怎么做？回答是，你没法知道。",
-    videoCover: "/assets/activity-video-3.png",
-    playIcon: "/assets/activity-play-3.svg",
+    videoCover: getAssetUrl("/assets/activity-video-3.png"),
+    playIcon: getAssetUrl("/assets/activity-play-3.svg"),
     videoDuration: "17:09",
-    likeIcon: "/assets/activity-like-3.svg",
-    collectIcon: "/assets/collect-icon-3.svg",
+    likeIcon: getAssetUrl("/assets/activity-like-3.svg"),
+    collectIcon: getAssetUrl("/assets/collect-icon-3.svg"),
     collectCount: "362",
-    commentIcon: "/assets/comment-icon-3.svg",
+    commentIcon: getAssetUrl("/assets/comment-icon-3.svg"),
     commentCount: "601",
-    shareIcon: "/assets/share-icon-3.svg",
+    shareIcon: getAssetUrl("/assets/share-icon-3.svg"),
     comments: [
       {
         username: "小熊出击",
@@ -229,19 +235,19 @@ const activities = ref([
   {
     id: 4,
     username: "团子不加冰",
-    avatar: "/assets/activity-avatar-4.svg",
+    avatar: getAssetUrl("/assets/activity-avatar-4.svg"),
     publishTime: "12-08 08:52",
     content:
       "你出生的时候，你哭着，周围的人笑着；你逝去的时候，你笑着，而周围的人在哭！",
-    videoCover: "/assets/activity-video-4.png",
-    playIcon: "/assets/activity-play-4.svg",
+    videoCover: getAssetUrl("/assets/activity-video-4.png"),
+    playIcon: getAssetUrl("/assets/activity-play-4.svg"),
     videoDuration: "02:16",
-    likeIcon: "/assets/activity-like-4.svg",
-    collectIcon: "/assets/collect-icon-4.svg",
+    likeIcon: getAssetUrl("/assets/activity-like-4.svg"),
+    collectIcon: getAssetUrl("/assets/collect-icon-4.svg"),
     collectCount: "686",
-    commentIcon: "/assets/comment-icon-4.svg",
+    commentIcon: getAssetUrl("/assets/comment-icon-4.svg"),
     commentCount: "766",
-    shareIcon: "/assets/share-icon-4.svg",
+    shareIcon: getAssetUrl("/assets/share-icon-4.svg"),
     comments: [
       {
         username: "小熊吹奶盖",

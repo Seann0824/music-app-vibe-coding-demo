@@ -108,67 +108,73 @@ const emit = defineEmits<{
   switchPage: [page: string];
 }>();
 
+// 获取资源路径的辅助函数
+const getAssetUrl = (path: string) => {
+  const cleanPath = path.replace(/^\/+/, '');
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 // 唱片公司数据
 const labels = ref([
   {
     englishName: "Esther Mike",
     chineseName: "银河造梦机",
-    avatar: "/assets/label-1.svg",
+    avatar: getAssetUrl("/assets/label-1.svg"),
   },
   {
     englishName: "Freda Betty",
     chineseName: "派大星的海洋裤",
-    avatar: "/assets/label-2.svg",
+    avatar: getAssetUrl("/assets/label-2.svg"),
   },
   {
     englishName: "Henry Arthur",
     chineseName: "小熊吹奶盖",
-    avatar: "/assets/label-3.svg",
+    avatar: getAssetUrl("/assets/label-3.svg"),
   },
   {
     englishName: "Maud Betsy",
     chineseName: "白雪公主的后妈",
-    avatar: "/assets/label-4.svg",
+    avatar: getAssetUrl("/assets/label-4.svg"),
   },
   {
     englishName: "Fisher Marjorie",
     chineseName: "討厌和人归類",
-    avatar: "/assets/label-5.svg",
+    avatar: getAssetUrl("/assets/label-5.svg"),
   },
   {
     englishName: "Hawkins Ted",
     chineseName: "有薄雾的夏日",
-    avatar: "/assets/label-6.svg",
+    avatar: getAssetUrl("/assets/label-6.svg"),
   },
   {
     englishName: "Myra Stuart",
     chineseName: "内只松鼠好眼熟",
-    avatar: "/assets/label-7.svg",
+    avatar: getAssetUrl("/assets/label-7.svg"),
   },
   {
     englishName: "Glenn Bartholomew",
     chineseName: "来一份甜豆",
-    avatar: "/assets/label-8.svg",
+    avatar: getAssetUrl("/assets/label-8.svg"),
   },
   {
     englishName: "Shirley Grote",
     chineseName: "脑袋困掉了嗷",
-    avatar: "/assets/label-9.svg",
+    avatar: getAssetUrl("/assets/label-9.svg"),
   },
   {
     englishName: "Jeffrey Tracy",
     chineseName: "比基尼小熊",
-    avatar: "/assets/label-10.svg",
+    avatar: getAssetUrl("/assets/label-10.svg"),
   },
   {
     englishName: "Cora Middleton",
     chineseName: "元气少女李逵",
-    avatar: "/assets/label-11.svg",
+    avatar: getAssetUrl("/assets/label-11.svg"),
   },
   {
     englishName: "Kristin Dickey",
     chineseName: "偷摘天上云",
-    avatar: "/assets/label-12.svg",
+    avatar: getAssetUrl("/assets/label-12.svg"),
   },
 ]);
 

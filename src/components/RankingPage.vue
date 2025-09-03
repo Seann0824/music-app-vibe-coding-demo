@@ -99,11 +99,17 @@ const emit = defineEmits<{
   switchPage: [page: string];
 }>();
 
+// 获取资源路径的辅助函数
+const getAssetUrl = (path: string) => {
+  const cleanPath = path.replace(/^\/+/, '');
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 // 榜单数据
 const rankings = ref([
   {
     title: "职场话题",
-    cover: "/assets/ranking-1.png",
+    cover: getAssetUrl("/assets/ranking-1.png"),
     count: "129",
     topics: [
       "今年大四，已经拿到了腾讯的 offer，但在毕业前一个月被学校开除了，我该怎么办？",
@@ -113,7 +119,7 @@ const rankings = ref([
   },
   {
     title: "学习话题",
-    cover: "/assets/ranking-2.png",
+    cover: getAssetUrl("/assets/ranking-2.png"),
     count: "473",
     topics: [
       "有什么相见恨晚的背单词方法？",
@@ -123,7 +129,7 @@ const rankings = ref([
   },
   {
     title: "阅读话题",
-    cover: "/assets/ranking-3.png",
+    cover: getAssetUrl("/assets/ranking-3.png"),
     count: "629",
     topics: [
       "你读过哪些令你有跪感的书？",
@@ -133,7 +139,7 @@ const rankings = ref([
   },
   {
     title: "生活话题",
-    cover: "/assets/ranking-4.png",
+    cover: getAssetUrl("/assets/ranking-4.png"),
     count: "711",
     topics: [
       "浙江发现一户人家厨房，那叫一个干净，人性化收纳细节超多！",
@@ -143,7 +149,7 @@ const rankings = ref([
   },
   {
     title: "设计话题",
-    cover: "/assets/ranking-5.png",
+    cover: getAssetUrl("/assets/ranking-5.png"),
     count: "733",
     topics: [
       "你见过最反人类的设计是什么？",
@@ -153,7 +159,7 @@ const rankings = ref([
   },
   {
     title: "科技话题",
-    cover: "/assets/ranking-6.png",
+    cover: getAssetUrl("/assets/ranking-6.png"),
     count: "825",
     topics: [
       "3位物理学家意外发现基础数学新方法，数学天才陶哲轩：我开始压根不相信",
@@ -163,7 +169,7 @@ const rankings = ref([
   },
   {
     title: "健身话题",
-    cover: "/assets/ranking-7.png",
+    cover: getAssetUrl("/assets/ranking-7.png"),
     count: "884",
     topics: [
       "工作能力强的人有哪些共同特征？",
@@ -173,7 +179,7 @@ const rankings = ref([
   },
   {
     title: "美食话题",
-    cover: "/assets/ranking-8.png",
+    cover: getAssetUrl("/assets/ranking-8.png"),
     count: "955",
     topics: [
       "今天做了鲜香麻辣口水鸡，在线求夸",
