@@ -158,8 +158,6 @@ const switchTab = (tab: string) => {
 .tab-bar-container {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
   max-width: 375px;
   height: 78px;
@@ -267,18 +265,5 @@ const switchTab = (tab: string) => {
   background-color: var(--label-color-dark-primary);
   width: 134px;
   height: 5px;
-}
-
-/* 响应式设计 */
-@media (min-width: 768px) {
-  .tab-bar-container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .tab-bar-container {
-    max-width: 1024px;
-  }
 }
 </style>

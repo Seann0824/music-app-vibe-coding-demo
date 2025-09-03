@@ -67,7 +67,7 @@ body {
 }
 
 #app {
-  width: 100%;
+  width: 375px;
   height: 100vh;
 }
 </style>
